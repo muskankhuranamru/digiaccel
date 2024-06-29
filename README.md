@@ -12,9 +12,9 @@ It is a mobile application developed using React Native that allows users to tra
 
 ## Dependencies
 
-- `react-native-maps`: Used for integrating Google Maps API.
-- `react-native-get-location`: Used for fetching the user's location.
-- `react-native-bridge-module`: Utilized for accessing native Android code from React Native.
+- `@react-navigation/native`: Used for smooth transitions between the screens.
+- `react-native-video`: Used for displaying videos.
+- `react-native-community/slider`: Utilized for creating smooth slider for video length and time display.
 
 ## Installation
 
