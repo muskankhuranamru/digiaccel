@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
-import { Colors, Fontsize, Spacing, Typography } from '../theme';
+import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {Colors, Fontsize, Spacing, Typography} from '../theme';
 import CustomProgressBar from './CustomProgressBar';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -23,13 +23,12 @@ const ModuleCard = ({
   hideProgressTextView,
   showLockedView,
   screenName,
-  navigation
+  navigation,
 }) => {
   return (
-    <TouchableOpacity 
-      style={[styles.module, containerStyle]} 
-      onPress={() => navigation.navigate(screenName)}
-    >
+    <TouchableOpacity
+      style={[styles.module, containerStyle]}
+      onPress={() => navigation.navigate(screenName)}>
       <View style={[styles.imageView, imageContainerStyle]}>
         <Image source={imageSource} style={styles.moduleImage} />
       </View>
@@ -57,9 +56,8 @@ const ModuleCard = ({
             <Text
               style={[
                 styles.moduleProgress,
-                { color: Colors.darkGrey, marginLeft: 5 },
-              ]}
-            >
+                {color: Colors.darkGrey, marginLeft: 5},
+              ]}>
               Locked
             </Text>
           </View>
@@ -68,7 +66,7 @@ const ModuleCard = ({
           <CustomProgressBar
             progress={progressBarFill}
             barColor={progressBarColor}
-            style={{ marginTop: Spacing.small }}
+            style={{marginTop: Spacing.small}}
           />
         )}
         {showProgressPercentage && (

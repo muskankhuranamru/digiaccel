@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -10,10 +10,10 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { Colors, Fontsize, Spacing, Typography } from '../theme';
+import {Colors, Fontsize, Spacing, Typography} from '../theme';
 import CustomButton from '../components/CustomButton';
 import CustomCheckBox from '../components/CustomCheckBox';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 const SignInScreen = () => {
   const navigation = useNavigation();
@@ -33,7 +33,7 @@ const SignInScreen = () => {
   };
 
   const handleSignIn = () => {
-    if (email === 'admin123@gmail.com' && password === 'admin123' ) {
+    if (email === 'admin123@gmail.com' && password === 'admin123') {
       navigation.navigate('Modules');
     } else {
       setError('Invalid credentials');
@@ -41,7 +41,7 @@ const SignInScreen = () => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{flex: 1}}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
           <View style={styles.upperContainer}>
@@ -61,29 +61,39 @@ const SignInScreen = () => {
               style={styles.input}
               placeholderTextColor={Colors.grey}
               value={email}
-              onChangeText={(text) => setEmail(text)}
+              onChangeText={text => setEmail(text)}
             />
-            <View style={[styles.input, { flexDirection: 'row', alignItems: 'center', padding: 5 }]}>
+            <View
+              style={[
+                styles.input,
+                {flexDirection: 'row', alignItems: 'center', padding: 5},
+              ]}>
               <TextInput
                 placeholder="Password"
                 secureTextEntry={showPassword}
                 placeholderTextColor={Colors.grey}
-                style={{ flex: 1 }}
+                style={{flex: 1}}
                 value={password}
-                onChangeText={(text) => setPassword(text)}
+                onChangeText={text => setPassword(text)}
               />
-              <TouchableOpacity style={{ marginRight: 10, padding: 5 }} onPress={togglePasswordVisibility}>
-                <Icon name={showPassword ? 'eye-off' : 'eye'} size={20} color={Colors.grey} />
+              <TouchableOpacity
+                style={{marginRight: 10, padding: 5}}
+                onPress={togglePasswordVisibility}>
+                <Icon
+                  name={showPassword ? 'eye-off' : 'eye'}
+                  size={20}
+                  color={Colors.grey}
+                />
               </TouchableOpacity>
             </View>
 
-
-            <TouchableOpacity onPress={()=>navigation.navigate('ForgotPassword')
-            } style={{alignSelf:'flex-end', marginTop:Spacing.small}} >
+            <TouchableOpacity
+              onPress={() => navigation.navigate('ForgotPassword')}
+              style={{alignSelf: 'flex-end', marginTop: Spacing.small}}>
               <Text style={styles.blueText}>Forgot password?</Text>
             </TouchableOpacity>
-{error ? <Text style={styles.errorText}>{error}</Text> : null}
-             
+            {error ? <Text style={styles.errorText}>{error}</Text> : null}
+
             <View style={styles.rowView}>
               <CustomCheckBox
                 checked={isChecked}
@@ -91,11 +101,16 @@ const SignInScreen = () => {
                 style={styles.checkbox}
               />
               <Text style={styles.blackText}>
-                By signing up, you agree to our terms of service and privacy policy.
+                By signing up, you agree to our terms of service and privacy
+                policy.
               </Text>
             </View>
-           
-            <CustomButton title="Sign In" onPress={handleSignIn} disabled={!email || !password } />
+
+            <CustomButton
+              title="Sign In"
+              onPress={handleSignIn}
+              disabled={!email || !password}
+            />
           </View>
         </View>
       </ScrollView>
@@ -161,7 +176,7 @@ const styles = StyleSheet.create({
   },
   errorText: {
     fontFamily: Typography.boldSecondary,
-     fontSize: Fontsize.smText,
-     color:Colors.errorText, 
+    fontSize: Fontsize.smText,
+    color: Colors.errorText,
   },
 });

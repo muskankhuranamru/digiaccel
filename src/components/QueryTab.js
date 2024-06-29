@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, TextInput, ScrollView, Image } from 'react-native';
-import { Colors, Fontsize, Spacing, Typography } from '../theme';
+import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  TouchableOpacity,
+  TextInput,
+  ScrollView,
+  Image,
+} from 'react-native';
+import {Colors, Fontsize, Spacing, Typography} from '../theme';
 import CustomButton from './CustomButton';
-
 
 const QueryTab = () => {
   const [queryText, setQueryText] = useState('');
@@ -17,23 +25,25 @@ const QueryTab = () => {
 
   return (
     <View style={styles.tabContainer}>
-
       <View style={styles.tabBar}>
         <TouchableOpacity style={[styles.tabItem, styles.activeTab]}>
-            <Image source={require('../assets/images/queries.png')}  style={styles.icon}/>
+          <Image
+            source={require('../assets/images/queries.png')}
+            style={styles.icon}
+          />
           <Text style={styles.tabText}>Queries</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.tabItem]}>
-            <Image source={require('../assets/images/notes.png')}  style={styles.icon}/>
-          <Text style={[styles.tabText, , {color:Colors.grey2}]}>Notes</Text>
+          <Image
+            source={require('../assets/images/notes.png')}
+            style={styles.icon}
+          />
+          <Text style={[styles.tabText, , {color: Colors.grey2}]}>Notes</Text>
         </TouchableOpacity>
       </View>
 
-
       <ScrollView contentContainerStyle={styles.content}>
-
-        <View style={{paddingHorizontal:Spacing.medium}} >
-
+        <View style={{paddingHorizontal: Spacing.medium}}>
           <TextInput
             style={styles.input}
             multiline
@@ -43,16 +53,24 @@ const QueryTab = () => {
 A mentor will respond to it in 24 Hrs."
             placeholderTextColor={Colors.grey2}
           />
-           <CustomButton title="Submit Query" onPress={handleQuerySubmit} style={{padding:7, width:130,alignSelf:'flex-end'
-           }} textStyle={{fontSize:Fontsize.smText}} />
+          <CustomButton
+            title="Submit Query"
+            onPress={handleQuerySubmit}
+            style={{padding: 7, width: 130, alignSelf: 'flex-end'}}
+            textStyle={{fontSize: Fontsize.smText}}
+          />
         </View>
-
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Asked Queries</Text>
-           <Text style={styles.queryItem}>Wanted to initiate discussion on the book which was an optional reading in this module.</Text>
+          <Text style={styles.queryItem}>
+            Wanted to initiate discussion on the book which was an optional
+            reading in this module.
+          </Text>
           {askedQueries.map((query, index) => (
-            <Text key={index} style={styles.queryItem}>{query}</Text>
+            <Text key={index} style={styles.queryItem}>
+              {query}
+            </Text>
           ))}
         </View>
       </ScrollView>
@@ -64,26 +82,26 @@ const styles = StyleSheet.create({
   tabContainer: {
     flex: 1,
     backgroundColor: Colors.offWhite,
-
   },
   tabBar: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
 
-     width:'60%', 
-        paddingTop:Spacing.medium
+    width: '60%',
+    paddingTop: Spacing.medium,
   },
   tabItem: {
     paddingHorizontal: Spacing.medium,
     paddingVertical: Spacing.small,
-        flexDirection:'row', alignItems:'center'
-     
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   activeTab: {
     borderBottomWidth: 2,
     borderBottomColor: Colors.primary,
-    flexDirection:'row', alignItems:'center'
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   tabText: {
     fontSize: Typography.body,
@@ -96,13 +114,15 @@ const styles = StyleSheet.create({
   },
   section: {
     marginVertical: Spacing.medium,
-    padding:Spacing.medium,
-    backgroundColor:Colors.white, flex:1
+    padding: Spacing.medium,
+    backgroundColor: Colors.white,
+    flex: 1,
   },
   sectionTitle: {
     fontSize: Fontsize.subHeading,
     marginBottom: Spacing.small,
-    fontFamily:Typography.mediumSecondary, color:Colors.black
+    fontFamily: Typography.mediumSecondary,
+    color: Colors.black,
   },
   input: {
     borderWidth: 1,
@@ -112,20 +132,20 @@ const styles = StyleSheet.create({
     marginBottom: Spacing.medium,
     minHeight: 100,
     textAlignVertical: 'top',
-    backgroundColor:Colors.white
+    backgroundColor: Colors.white,
   },
-  
-  queryItem: {
 
+  queryItem: {
     borderRadius: Spacing.cardBorderRadius,
     padding: Spacing.medium,
     marginBottom: Spacing.small,
-    backgroundColor:Colors.offWhite, 
-
+    backgroundColor: Colors.offWhite,
   },
-  icon :{
-    height:25, width:25, marginRight:Spacing.xsmall
-  }
+  icon: {
+    height: 25,
+    width: 25,
+    marginRight: Spacing.xsmall,
+  },
 });
 
 export default QueryTab;

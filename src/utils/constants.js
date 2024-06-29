@@ -148,3 +148,11 @@ export const shoppingMissionData = [
       date: '12 Sept, 23'
     },
   ];
+
+  export   const steps = [
+    {title: 'Digital Journeys Explainer', isDone: false},
+    {title: 'eCommerce Shopping Missions', isDone: true},
+    {title: 'Additional Reading', isLocked: true},
+    {title: 'Shopping Missions Quiz', isLocked: true},
+    {title: 'Swiggy Case Study', isLocked: true},
+  ];

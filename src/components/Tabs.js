@@ -1,41 +1,64 @@
-
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, TextInput, ScrollView } from 'react-native';
-import { Colors, Fontsize, Spacing, Typography } from '../theme';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  TextInput,
+  ScrollView,
+} from 'react-native';
+import {Colors, Fontsize, Spacing, Typography} from '../theme';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const Tabs = ({ tabs, searchPlaceholder = "Search" }) => {
+const Tabs = ({tabs, searchPlaceholder = 'Search'}) => {
   const [activeTab, setActiveTab] = React.useState(tabs?.[0].label);
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{flex: 1}}>
       <View style={styles.container}>
-        {tabs?.map((tab) => (
+        {tabs?.map(tab => (
           <TouchableOpacity
             key={tab.label}
             style={[styles.tab, activeTab === tab.label && styles.activeTab]}
-            onPress={() => setActiveTab(tab.label)}
-          >
-            <Text style={[styles.tabText, activeTab === tab.label && styles.activeTabText]}>
+            onPress={() => setActiveTab(tab.label)}>
+            <Text
+              style={[
+                styles.tabText,
+                activeTab === tab.label && styles.activeTabText,
+              ]}>
               {tab.label}
             </Text>
           </TouchableOpacity>
         ))}
       </View>
-      <View style={{ paddingHorizontal: Spacing.medium, marginTop: Spacing.mid }}>
+      <View style={{paddingHorizontal: Spacing.medium, marginTop: Spacing.mid}}>
         <View style={styles.searchBar}>
-          <Icon name={'search'} size={20} color={Colors.grey} style={{ marginLeft: Spacing.medium }} />
+          <Icon
+            name={'search'}
+            size={20}
+            color={Colors.grey}
+            style={{marginLeft: Spacing.medium}}
+          />
           <TextInput
-            style={{ paddingHorizontal: Spacing.medium }}
+            style={{paddingHorizontal: Spacing.medium}}
             placeholder={searchPlaceholder}
             placeholderTextColor={Colors.grey}
           />
         </View>
       </View>
-      <View style={{ flex: 1,  marginTop: Spacing.mid, backgroundColor: Colors.offWhite }}>
-        {tabs.map((tab) => (
-          activeTab === tab.label ? <View key={tab.label} style={{ flex: 1 }}>{tab.content}</View> : null
-        ))}
+      <View
+        style={{
+          flex: 1,
+          marginTop: Spacing.mid,
+          backgroundColor: Colors.offWhite,
+        }}>
+        {tabs.map(tab =>
+          activeTab === tab.label ? (
+            <View key={tab.label} style={{flex: 1}}>
+              {tab.content}
+            </View>
+          ) : null,
+        )}
       </View>
     </View>
   );

@@ -1,22 +1,35 @@
-// ProgressStep.js
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Colors, Fontsize, Spacing, Typography } from '../theme';
+import {Colors, Fontsize, Spacing, Typography} from '../theme';
 
-const ProgressStep = ({ title, isDone, isLocked }) => {
+const ProgressStep = ({title, isDone, isLocked}) => {
   return (
-    <View style={isDone ? styles.stepContainer2 :  styles.stepContainer}>
+    <View style={isDone ? styles.stepContainer2 : styles.stepContainer}>
       <View style={styles.iconContainer}>
         <Icon
           name={isDone ? 'check-circle' : isLocked ? 'lock' : 'circle-outline'}
           size={30}
-          color={isDone ? Colors.oliveGreen : isLocked ? Colors.grey2 : Colors.primary}
+          color={
+            isDone
+              ? Colors.oliveGreen
+              : isLocked
+              ? Colors.grey2
+              : Colors.primary
+          }
         />
-        <View style={[styles.verticalLine, isDone && styles.lineDone, isLocked && styles.lineLocked]} />
+        <View
+          style={[
+            styles.verticalLine,
+            isDone && styles.lineDone,
+            isLocked && styles.lineLocked,
+          ]}
+        />
       </View>
       <View style={styles.contentTextContainer}>
-        <Text style={ !isDone  &&  !isLocked ? styles.title : styles.title2 }>{title}</Text>
+        <Text style={!isDone && !isLocked ? styles.title : styles.title2}>
+          {title}
+        </Text>
       </View>
     </View>
   );
@@ -25,17 +38,12 @@ const ProgressStep = ({ title, isDone, isLocked }) => {
 const styles = StyleSheet.create({
   stepContainer: {
     flexDirection: 'row',
-    paddingHorizontal:Spacing.medium
-
-
-
+    paddingHorizontal: Spacing.medium,
   },
-   stepContainer2: {
+  stepContainer2: {
     flexDirection: 'row',
-    backgroundColor:Colors.primaryTone4, 
-        paddingHorizontal:Spacing.medium
-
-
+    backgroundColor: Colors.primaryTone4,
+    paddingHorizontal: Spacing.medium,
   },
   iconContainer: {
     alignItems: 'center',
@@ -53,14 +61,18 @@ const styles = StyleSheet.create({
   },
   contentTextContainer: {
     marginLeft: Spacing.small,
-
-
   },
   title: {
-fontFamily:Typography.boldSecondary, fontSize:Fontsize.subHeading, color:Colors.black, marginTop:Spacing.xxsmall
+    fontFamily: Typography.boldSecondary,
+    fontSize: Fontsize.subHeading,
+    color: Colors.black,
+    marginTop: Spacing.xxsmall,
   },
-   title2: {
-fontFamily:Typography.mediumSecondary, fontSize:Fontsize.subHeading, color:Colors.darkGrey, marginTop:Spacing.xxsmall
+  title2: {
+    fontFamily: Typography.mediumSecondary,
+    fontSize: Fontsize.subHeading,
+    color: Colors.darkGrey,
+    marginTop: Spacing.xxsmall,
   },
 });
 

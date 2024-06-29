@@ -1,12 +1,15 @@
-
-
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
-const CustomProgressBar = ({ progress, barColor, style }) => {
+const CustomProgressBar = ({progress, barColor, style}) => {
   return (
     <View style={[styles.container, {style}]}>
-      <View style={[styles.progressBar, { width: `${progress * 100}%`, backgroundColor: barColor }]} />
+      <View
+        style={[
+          styles.progressBar,
+          {width: `${progress * 100}%`, backgroundColor: barColor},
+        ]}
+      />
     </View>
   );
 };

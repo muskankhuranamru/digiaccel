@@ -1,14 +1,13 @@
-
 import React from 'react';
-import { TouchableOpacity, View, StyleSheet } from 'react-native';
+import {TouchableOpacity, View, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { Colors } from '../theme'; 
+import {Colors, Spacing} from '../theme';
 
-const CustomCheckBox = ({ checked, onChange, style }) => {
+const CustomCheckBox = ({checked, onChange, style}) => {
   return (
     <TouchableOpacity style={[styles.container, style]} onPress={onChange}>
       <View style={[styles.checkbox, checked && styles.checked]}>
-        {checked && <Icon name="checkmark" size={16} color="#FFFFFF" />}
+        {checked && <Icon name="checkmark" size={16} color={Colors.white} />}
       </View>
     </TouchableOpacity>
   );
@@ -23,17 +22,16 @@ const styles = StyleSheet.create({
     width: 28,
     height: 28,
     borderWidth: 1,
-  borderColor:Colors.primaryTone1,
+    borderColor: Colors.primaryTone1,
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 10,
-    backgroundColor: Colors.white, 
+    marginRight: Spacing.small,
+    backgroundColor: Colors.white,
   },
   checked: {
-    backgroundColor: Colors.primary, 
-    borderWidth:0
-  
+    backgroundColor: Colors.primary,
+    borderWidth: 0,
   },
 });
 

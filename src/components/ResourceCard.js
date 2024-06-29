@@ -11,7 +11,7 @@ const ResourceCard = ({
   onButtonPress,
   buttonTextStyle,
   buttonStyle,
-  buttonTitle
+  buttonTitle,
 }) => {
   return (
     <View style={styles.card}>
@@ -22,10 +22,14 @@ const ResourceCard = ({
 
         <View style={styles.content}>
           <View style={styles.titleRow}>
-            <Text numberOfLines={1} ellipsizeMode='tail' style={styles.title}>{title}</Text>
+            <Text numberOfLines={1} ellipsizeMode="tail" style={styles.title}>
+              {title}
+            </Text>
             <Icon name="check-circle" size={20} color={Colors.green} />
           </View>
-          <Text  numberOfLines={1} ellipsizeMode='tail'style={styles.subtitle}>{description}</Text>
+          <Text numberOfLines={1} ellipsizeMode="tail" style={styles.subtitle}>
+            {description}
+          </Text>
 
           <CustomButton
             title={buttonTitle}
@@ -62,7 +66,7 @@ const styles = StyleSheet.create({
     height: 50,
     width: 50,
     borderRadius: 25,
-    marginRight: 10,
+    marginRight: Spacing.small,
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'flex-start',
@@ -83,7 +87,6 @@ const styles = StyleSheet.create({
     fontSize: Fontsize.subHeading,
     color: Colors.black,
     marginRight: Spacing.small,
-
   },
   subtitle: {
     fontFamily: Typography.mediumSecondary,

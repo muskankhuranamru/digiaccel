@@ -1,18 +1,25 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, FlatList, ScrollView } from 'react-native';
-import { Colors, Fontsize, Spacing, Typography } from '../theme';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  SafeAreaView,
+  FlatList,
+  ScrollView,
+} from 'react-native';
+import {Colors, Fontsize, Spacing, Typography} from '../theme';
 import Header from '../components/Header';
 import ModuleCard from '../components/ModuleCard';
-import { moduleData, moduleData2, moduleData3 } from '../utils/constants';
+import {moduleData, moduleData2, moduleData3} from '../utils/constants';
 import GoBackHeader from '../components/GoBackHeader';
 
-const ModuleScreen = ({ navigation }) => {
-
-  const renderItem = ({ item }) => (
-    <ModuleCard 
-      title={item.title} 
-      progress={item.progress} 
-      imageSource={item.imageSource} 
+const ModuleScreen = ({navigation}) => {
+  const renderItem = ({item}) => (
+    <ModuleCard
+      title={item.title}
+      progress={item.progress}
+      imageSource={item.imageSource}
       onPress={item.onPress}
       progressBarColor={item.progressBarColor}
       progressPercentage={item.progressPercentage}
@@ -20,57 +27,77 @@ const ModuleScreen = ({ navigation }) => {
       showProgressBar={true}
       showProgressPercentage={true}
       screenName={item.screenName}
-      navigation={navigation} // Pass navigation prop here
+      navigation={navigation}
     />
   );
 
-  const renderItem2 = ({ item }) => (
-    <ModuleCard 
-      title={item.title} 
-      progress={item.progress} 
-      imageSource={item.imageSource} 
+  const renderItem2 = ({item}) => (
+    <ModuleCard
+      title={item.title}
+      progress={item.progress}
+      imageSource={item.imageSource}
       onPress={item.onPress}
       screenName={item.screenName}
       progressBarColor={item.progressBarColor}
       progressPercentage={item.progressPercentage}
       progressBarFill={item.progressBarFill}
-      cardTitleStyle={{ fontSize: Fontsize.subHeading, width: '100%', marginRight: Spacing.small, fontFamily: Typography.semiBoldSecondary }}
-      progressStyle={{ color: Colors.green }}
+      cardTitleStyle={{
+        fontSize: Fontsize.subHeading,
+        width: '100%',
+        marginRight: Spacing.small,
+        fontFamily: Typography.semiBoldSecondary,
+      }}
+      progressStyle={{color: Colors.green}}
       showCompletedIcon={true}
-      progressViewStyle={{ marginTop: Spacing.xsmall, marginBottom: 0 }}
-      imageContainerStyle={{ height: 60, width: 60 }}
-      containerStyle={{ backgroundColor: Colors.greenTone1 }}
-      navigation={navigation} // Pass navigation prop here
+      progressViewStyle={{marginTop: Spacing.xsmall, marginBottom: 0}}
+      imageContainerStyle={{height: 60, width: 60}}
+      containerStyle={{backgroundColor: Colors.greenTone1}}
+      navigation={navigation}
     />
   );
 
-  const renderItem3 = ({ item, index }) => (
-    <ModuleCard 
-      title={item.title} 
-      progress={item.progress} 
-      imageSource={item.imageSource} 
+  const renderItem3 = ({item, index}) => (
+    <ModuleCard
+      title={item.title}
+      progress={item.progress}
+      imageSource={item.imageSource}
       onPress={item.onPress}
       progressBarColor={item.progressBarColor}
       progressPercentage={item.progressPercentage}
       progressBarFill={item.progressBarFill}
-      cardTitleStyle={{ fontSize: Fontsize.subHeading, width: '100%', marginRight: Spacing.small, fontFamily: Typography.semiBoldSecondary }}
-      progressViewStyle={{ marginTop: Spacing.xsmall, marginBottom: Spacing.small }}
-      imageContainerStyle={{ height: 60, width: 60 }}
-      containerStyle={{ marginBottom: Spacing.medium, opacity: index === 0 ? 1 : 0.7 }}
+      cardTitleStyle={{
+        fontSize: Fontsize.subHeading,
+        width: '100%',
+        marginRight: Spacing.small,
+        fontFamily: Typography.semiBoldSecondary,
+      }}
+      progressViewStyle={{
+        marginTop: Spacing.xsmall,
+        marginBottom: Spacing.small,
+      }}
+      imageContainerStyle={{height: 60, width: 60}}
+      containerStyle={{
+        marginBottom: Spacing.medium,
+        opacity: index === 0 ? 1 : 0.7,
+      }}
       showProgressBar={index > 0 ? false : true}
-      hideProgressTextView={ index > 0 ? true : false }
-      showLockedView={index > 0 ? true : false }
+      hideProgressTextView={index > 0 ? true : false}
+      showLockedView={index > 0 ? true : false}
       screenName={item.screenName}
-      navigation={navigation} // Pass navigation prop here
+      navigation={navigation}
     />
   );
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{flex: 1}}>
       <Header title="Learning Hub" />
-      <ScrollView >
-        <View style={styles.container}>    
-          <GoBackHeader navigation={navigation} title='Back to Dashboard' style={{ marginLeft: Spacing.medium, marginTop: Spacing.medium }} />
+      <ScrollView>
+        <View style={styles.container}>
+          <GoBackHeader
+            navigation={navigation}
+            title="Back to Dashboard"
+            style={{marginLeft: Spacing.medium, marginTop: Spacing.medium}}
+          />
           <View style={styles.inProgressView}>
             <Text style={styles.blueText}>InProgress</Text>
           </View>
@@ -81,7 +108,11 @@ const ModuleScreen = ({ navigation }) => {
               keyExtractor={item => item.id}
               horizontal
               showsHorizontalScrollIndicator={false}
-              contentContainerStyle={{ marginTop: Spacing.medium, paddingLeft: Spacing.medium, paddingBottom: Spacing.medium }}
+              contentContainerStyle={{
+                marginTop: Spacing.medium,
+                paddingLeft: Spacing.medium,
+                paddingBottom: Spacing.medium,
+              }}
             />
             <Text style={styles.heading}>Recently Completed</Text>
             <FlatList
@@ -90,7 +121,11 @@ const ModuleScreen = ({ navigation }) => {
               keyExtractor={item => item.id}
               horizontal
               showsHorizontalScrollIndicator={false}
-              contentContainerStyle={{ marginTop: Spacing.medium, paddingLeft: Spacing.medium, paddingBottom: Spacing.medium }}
+              contentContainerStyle={{
+                marginTop: Spacing.medium,
+                paddingLeft: Spacing.medium,
+                paddingBottom: Spacing.medium,
+              }}
             />
             <Text style={styles.heading}>Upcoming Modules</Text>
             <FlatList
@@ -98,7 +133,11 @@ const ModuleScreen = ({ navigation }) => {
               renderItem={renderItem3}
               keyExtractor={item => item.id}
               showsVerticalScrollIndicator={false}
-              contentContainerStyle={{ marginTop: Spacing.medium, paddingLeft: Spacing.medium, paddingBottom: Spacing.medium }}
+              contentContainerStyle={{
+                marginTop: Spacing.medium,
+                paddingLeft: Spacing.medium,
+                paddingBottom: Spacing.medium,
+              }}
             />
           </View>
         </View>
@@ -110,39 +149,39 @@ const ModuleScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.offWhite,
-    flex: 1, 
+    flex: 1,
   },
   text: {
     fontSize: Fontsize.subHeading,
     marginBottom: Spacing.mid,
   },
   inProgressView: {
-    borderRadius: Spacing.cardBorderRadius, 
-    backgroundColor: Colors.primaryTone2, 
-    alignItems: 'center', 
-    justifyContent: 'center', 
-    marginLeft: Spacing.medium, 
-    marginTop: Spacing.medium, 
-    width: 100, 
-    padding: Spacing.xsmall
-  }, 
+    borderRadius: Spacing.cardBorderRadius,
+    backgroundColor: Colors.primaryTone2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: Spacing.medium,
+    marginTop: Spacing.medium,
+    width: 100,
+    padding: Spacing.xsmall,
+  },
   blueText: {
     fontSize: Fontsize.smText,
-    fontFamily: Typography.boldSecondary, 
-    color: Colors.primary
+    fontFamily: Typography.boldSecondary,
+    color: Colors.primary,
   },
   rowView: {
-    flexDirection: 'row', 
-    alignItems: 'center', 
-    marginLeft: Spacing.medium, 
-    marginTop: Spacing.medium
-  }, 
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: Spacing.medium,
+    marginTop: Spacing.medium,
+  },
   heading: {
     fontSize: Fontsize.heading,
     fontFamily: Typography.boldSecondary,
-    color: Colors.darkGrey, 
-    marginLeft: Spacing.medium
-  }
+    color: Colors.darkGrey,
+    marginLeft: Spacing.medium,
+  },
 });
 
 export default ModuleScreen;
