@@ -37,7 +37,7 @@ const VideoPlayer = () => {
 
   return (
     <View style={styles.container}>
-      <View style={[styles.rowView, { padding: Spacing.medium }]}>
+      <View style={[styles.rowView, { padding: Spacing.medium, backgroundColor:Colors.white }]}>
         <Text style={styles.title}>Digital Shopper Journey</Text>
         <View style={styles.controls}>
           <TouchableOpacity style={styles.rowView} onPress={() => { /* handle previous */ }}>
@@ -93,8 +93,7 @@ const VideoPlayer = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.offWhite,
   },
   title: {
     fontFamily: Typography.semiBoldSecondary,
