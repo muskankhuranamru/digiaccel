@@ -6,7 +6,7 @@ export const moduleData = [
       title: 'Digital Shopper Journey',
       progress: '4 Learning hours left',
       imageSource: require('../assets/images/moduleCardImage.png'),
-      onPress: () => navigation.navigate('Module'),
+     screenName : 'ModuleDetails',
       progressBarColor: Colors.primary,
       progressPercentage: '90%',
       progressBarFill: 0.9,
@@ -17,7 +17,7 @@ export const moduleData = [
       title: 'Digital Shopper Journey',
       progress: '2 Learning hours left',
       imageSource: require('../assets/images/moduleCardImage.png'),
-      onPress: () => navigation.navigate('AnotherModule'),
+     screenName : 'ModuleDetails',
       progressBarColor: Colors.secondary,
       progressPercentage: '50%',
       progressBarFill: 0.5,
@@ -27,7 +27,7 @@ export const moduleData = [
       title: 'Digital Shopper Journey',
       progress: '1 Learning hour left',
       imageSource: require('../assets/images/moduleCardImage.png'),
-      onPress: () => navigation.navigate('ThirdModule'),
+     screenName : 'ModuleDetails',
       progressBarColor: Colors.primary,
       progressPercentage: '75%',
       progressBarFill: 0.75,
@@ -40,7 +40,7 @@ export const moduleData = [
       title: 'Digital Shopper Journey',
       progress: '4 Learning completed',
       imageSource: require('../assets/images/moduleCardImage.png'),
-      onPress: () => navigation.navigate('Module'),
+     screenName : 'ModuleDetails',
 
     },
     {
@@ -48,7 +48,7 @@ export const moduleData = [
       title: 'Digital Shopper Journey',
       progress: '2 Learning hours completed',
       imageSource: require('../assets/images/moduleCardImage.png'),
-      onPress: () => navigation.navigate('AnotherModule'),
+     screenName : 'ModuleDetails',
  
     },
     {
@@ -56,7 +56,7 @@ export const moduleData = [
       title: 'Digital Shopper Journey',
       progress: '1 Learning completed',
       imageSource: require('../assets/images/moduleCardImage.png'),
-      onPress: () => navigation.navigate('ThirdModule'),
+     screenName : 'ModuleDetails',
 
     },
    
@@ -68,7 +68,7 @@ export const moduleData = [
       title: 'Digital Shopper Journey',
       progress: '4 Learning hours left',
       imageSource: require('../assets/images/moduleCardImage.png'),
-      onPress: () => navigation.navigate('Module'),
+     screenName : 'ModuleDetails',
       progressBarColor: Colors.primary,
       progressBarFill: 0.3,
     },
@@ -78,7 +78,7 @@ export const moduleData = [
       title: 'Digital Shopper Journey',
       progress: '2 Learning hours left',
       imageSource: require('../assets/images/moduleCardImage.png'),
-      onPress: () => navigation.navigate('AnotherModule'),
+     screenName : 'ModuleDetails',
 
     },
     {
@@ -86,7 +86,7 @@ export const moduleData = [
       title: 'Digital Shopper Journey',
       progress: '1 Learning hour left',
       imageSource: require('../assets/images/moduleCardImage.png'),
-      onPress: () => navigation.navigate('ThirdModule'),
+     screenName : 'ModuleDetails',
 
     },
   ];
