@@ -1,79 +1,67 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Digi Learn Mobile App Using React Native
 
-# Getting Started
+It is a mobile application developed using React Native that allows users to track their learning progress through modules and courses. It provides features to view in-progress modules, recently completed modules, and upcoming modules in a streamlined interface. Also can watch videos, complete modules, and learn new things from modules.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Features
 
-## Step 1: Start the Metro Server
+- **Module-Based Learning**: Organizes content into modules for structured learning.
+- **Video Player**: Includes a built-in video player for viewing educational videos.
+- **Content Lists**: Displays lists of educational content with progress tracking.
+- **Query Submission**: Allows users to submit queries for further clarification.
+- **Notes:**: : Enables users to take and save personal notes related to the learning material.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Dependencies
 
-To start Metro, run the following command from the _root_ of your React Native project:
+- `react-native-maps`: Used for integrating Google Maps API.
+- `react-native-get-location`: Used for fetching the user's location.
+- `react-native-bridge-module`: Utilized for accessing native Android code from React Native.
 
-```bash
-# using npm
-npm start
+## Installation
 
-# OR using Yarn
-yarn start
-```
+1. Clone the repository:
 
-## Step 2: Start your Application
+   ```bash
+   git clone <repository_url>
+   ```
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+2. Navigate to the project directory:
 
-### For Android
+   ```bash
+   cd <project_directory>
+   ```
 
-```bash
-# using npm
-npm run android
+3. Install dependencies:
 
-# OR using Yarn
-yarn android
-```
+   ```bash
+   npm install
+   ```
 
-### For iOS
+4. Link native dependencies:
 
-```bash
-# using npm
-npm run ios
+   ```bash
+   react-native link
+   ```
 
-# OR using Yarn
-yarn ios
-```
+5. Run the application:
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+   ```bash
+   react-native run-android
+   ```
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+## Usage
 
-## Step 3: Modifying your App
+- Navigate through different modules using the sidebar menu.
+- Click on a module to view its content details.
+- Submit queries for additional help.
+- Use the video player to watch instructional videos.
 
-Now that you have successfully run the app, let's modify it.
+## Note
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+- You can use the below creds to sign in -
+- Email : admin123@gmail.com, password : admin123
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+## Contributor
 
-## Congratulations! :tada:
+Muskan Khurana
 
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+For reference, here is the drive link for the entire working app videos in emulator as well as in physical device.
