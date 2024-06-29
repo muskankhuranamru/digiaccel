@@ -1,9 +1,9 @@
-// src/navigation/DrawerNavigator.js
 
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import StackNavigator from './StackNavigator';
+import Library from '../screens/Library';
 
 
 const Drawer = createDrawerNavigator();
@@ -13,7 +13,7 @@ const DrawerNavigator = () => {
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home" screenOptions={{headerShown:false}}>
         <Drawer.Screen name="Learning Hub" component={StackNavigator} />
-        {/* Add more screens here */}
+        <Drawer.Screen name="Library" component={Library} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

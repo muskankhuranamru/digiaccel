@@ -90,3 +90,61 @@ export const moduleData = [
 
     },
   ];
+export const resourceData = [
+  {
+    id: '1',
+    imageSource: require('../assets/images/searchBook.png'),
+    title: 'Swiggy case study',
+    description: 'Module 2 - Digital Shopper Journey',
+    buttonTitle : 'View'
+  },
+  {
+    id: '2',
+    imageSource: require('../assets/images/readBook.png'),
+    title: 'Amazon case study',
+    description: 'Module 3 - Digital Shopper Exp',
+        buttonTitle : 'View'
+  },
+  {
+    id: '3',
+    imageSource: require('../assets/images/newBook.png'),
+    title: 'Working  file for  simulation',
+    description: 'Module 4 - Digital Shopping Strategy',
+        buttonTitle : 'Download'
+  },
+  {
+    id: '4',
+    imageSource: require('../assets/images/searchBook.png'),
+    title: 'Additional Reading Material',
+    description: 'Module 5 - Shopper Analytics',
+        buttonTitle : 'View'
+  },
+
+];
+
+export const shoppingMissionData = [
+    {
+      id: '1',
+      imageSource: require('../assets/images/play.png'),
+      title: 'Shopping Missions',
+      time: '01:30',
+      description: 'In publishing and graphic digital, Lorem ipsum is a placeholder text commonly used to demonstrate the Lorem ipsum is a placeholder.',
+      date: '12 Sept, 23'
+    },
+    {
+      id: '2',
+      imageSource: require('../assets/images/readBook.png'),
+      title: 'Shopping Missions',
+      time: '01:30',
+      description: 'In publishing and graphic digital, Lorem ipsum is a placeholder text commonly used to demonstrate the Lorem ipsum is a placeholder.',
+      date: '12 Sept, 23'
+    },
+    {
+      id: '3',
+      imageSource: require('../assets/images/bookmark.png'),
+      title: 'Shopping Missions',
+      time: '01:30',
+      description: 'In publishing and graphic digital, Lorem ipsum is a placeholder text commonly used to demonstrate the Lorem ipsum is a placeholder.',
+      date: '12 Sept, 23'
+    },
+  ];

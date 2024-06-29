@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import {Colors, Fontsize, Spacing, Typography} from '../theme';
 import CustomProgressBar from './CustomProgressBar';
-import Icon from 'react-native-vector-icons/Ionicons'; 
+import Icon from 'react-native-vector-icons/Ionicons';
 
 function ModuleCard({
   title,
@@ -12,7 +12,16 @@ function ModuleCard({
   progressPercentage,
   progressBarColor,
   progressBarFill,
-  containerStyle, imageContainerStyle, cardTitleStyle, progressStyle, showProgressBar, showProgressPercentage, showCompletedIcon, progressViewStyle, hideProgressTextView, showLockedView
+  containerStyle,
+  imageContainerStyle,
+  cardTitleStyle,
+  progressStyle,
+  showProgressBar,
+  showProgressPercentage,
+  showCompletedIcon,
+  progressViewStyle,
+  hideProgressTextView,
+  showLockedView,
 }) {
   return (
     <TouchableOpacity style={[styles.module, containerStyle]} onPress={onPress}>
@@ -24,26 +33,43 @@ function ModuleCard({
         <Text numberOfLines={2} style={[styles.moduleTitle, cardTitleStyle]}>
           {title}
         </Text>
-        {!hideProgressTextView && <View style={[styles.rowView, progressViewStyle]}>
-        <Text style={[styles.moduleProgress, progressStyle]}>{progress}</Text>
-       {showCompletedIcon &&  <Icon name="checkmark-circle" size={22} color={Colors.green}  />
- } 
-</View> }
-{ showLockedView &&
- <View style={styles.lockedView}>
-  <Icon name="lock-closed-outline" size={15} color={Colors.darkGrey}  />
-          <Text style={[styles.moduleProgress, {color:Colors.darkGrey, marginLeft:5}]}>Locked</Text>
-        </View>
-}
+        {!hideProgressTextView && (
+          <View style={[styles.rowView, progressViewStyle]}>
+            <Text style={[styles.moduleProgress, progressStyle]}>
+              {progress}
+            </Text>
+            {showCompletedIcon && (
+              <Icon name="checkmark-circle" size={22} color={Colors.green} />
+            )}
+          </View>
+        )}
+        {showLockedView && (
+          <View style={styles.lockedView}>
+            <Icon
+              name="lock-closed-outline"
+              size={15}
+              color={Colors.darkGrey}
+            />
+            <Text
+              style={[
+                styles.moduleProgress,
+                {color: Colors.darkGrey, marginLeft: 5},
+              ]}>
+              Locked
+            </Text>
+          </View>
+        )}
 
-
-        {showProgressBar &&  <CustomProgressBar
-          progress={progressBarFill}
-          barColor={progressBarColor}
-          style={{marginTop: Spacing.small}}
-        />}
-       {showProgressPercentage &&  <Text style={styles.blackText}>{progressPercentage}</Text>}
-        
+        {showProgressBar && (
+          <CustomProgressBar
+            progress={progressBarFill}
+            barColor={progressBarColor}
+            style={{marginTop: Spacing.small}}
+          />
+        )}
+        {showProgressPercentage && (
+          <Text style={styles.blackText}>{progressPercentage}</Text>
+        )}
       </View>
     </TouchableOpacity>
   );
@@ -77,7 +103,7 @@ const styles = StyleSheet.create({
     marginHorizontal: Spacing.medium,
     borderRadius: Spacing.cardBorderRadius,
     overflow: 'hidden',
-    marginVertical:Spacing.small
+    marginVertical: Spacing.small,
   },
 
   moduleTitle: {
@@ -90,8 +116,7 @@ const styles = StyleSheet.create({
     fontFamily: Typography.semiBoldPrimary,
     fontSize: Fontsize.description,
     color: Colors.primary,
-    marginRight:Spacing.small
-
+    marginRight: Spacing.small,
   },
   blackText: {
     fontFamily: Typography.boldPrimary,
@@ -102,14 +127,23 @@ const styles = StyleSheet.create({
   moduleInfo: {
     paddingVertical: Spacing.medium,
   },
-  rowView:{
-    flexDirection:'row', alignItems:'center',     marginTop: Spacing.small,
+  rowView: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: Spacing.small,
     marginBottom: Spacing.mid,
-    marginRight:Spacing.medium
-  }, 
-  lockedView:{
-    flexDirection:'row', alignItems:'center', borderRadius:6, width:88, backgroundColor:Colors.lightGrey, justifyContent:'center', paddingVertical:2, marginTop:Spacing.medium
-  }
+    marginRight: Spacing.medium,
+  },
+  lockedView: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderRadius: 6,
+    width: 88,
+    backgroundColor: Colors.lightGrey,
+    justifyContent: 'center',
+    paddingVertical: 2,
+    marginTop: Spacing.medium,
+  },
 });
 
 export default ModuleCard;
